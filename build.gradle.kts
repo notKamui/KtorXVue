@@ -21,7 +21,6 @@ application {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { url = uri("https://kotlin.bintray.com/ktor") }
 }
 
 dependencies {
