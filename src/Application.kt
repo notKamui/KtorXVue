@@ -7,9 +7,10 @@ import io.ktor.http.*
 import io.ktor.http.content.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import io.ktor.server.netty.*
 
 
-fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
+fun main(args: Array<String>): Unit = EngineMain.main(args)
 
 fun Application.module() {
 
@@ -76,7 +77,7 @@ fun Application.module() {
         // actual API code
         route("/api/") {
             get("/") {
-                call.respond("Example API 0.0.1")
+                call.respond("KxV API 0.0.1")
             }
         }
     }
