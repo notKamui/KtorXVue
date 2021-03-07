@@ -18,6 +18,9 @@ The app will auto-compile on file update
 In root directory of project execute:
 
 - Terminal: `./gradlew build`
+  (or `gradle -t run` if gradle is installed)
 
-To run the bundled jar from the `bundle` folder simply run `java -jar bundle/{jarname}.jar`. This will not work on your
-machine as it wants to use port 80. You can bypass this by running `java -jar bundle/{jarname}.jar -port=8080`.
+To run the bundled jar from the `bundle` folder simply run `java -jar bundle/{jarname}.jar`.
+
+This will not work on your machine as it wants to use port 80. You can bypass this by
+running `java -jar bundle/{jarname}.jar -port=8080`.
