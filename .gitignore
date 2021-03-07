@@ -1,0 +1,25 @@
+/.gradle
+/.idea
+/out
+/build
+*.iml
+*.ipr
+*.iws
+
+.DS_Store
+
+src-vueA/node_modules
+src-vueA/dist
+resources/dist
+bundle
+
+
+# local env files
+src-vueA/.env.local
+src-vueA/.env.*.local
+
+# Log files
+src-vueA/npm-debug.log*
+src-vueA/yarn-debug.log*
+src-vueA/yarn-error.log*
+src-vueA/pnpm-debug.log*
