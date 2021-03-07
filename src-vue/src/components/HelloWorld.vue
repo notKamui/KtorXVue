@@ -10,21 +10,28 @@
 
 <script lang="ts">
 import axios from 'axios'
+import { ref, defineComponent } from 'vue';
 
-export default {
-  name: 'HelloWorld',
+const apiVersion = ref<string>('');
+
+const getApiVersion = () => {
+  axios.get('/').then(res => {
+    apiVersion.value = res.data;
+  }).catch(() => {
+    apiVersion.value = 'Could not resolve API version';
+  })
+};
+
+export default defineComponent({
   setup() {
-    let apiVersion = '';
-    axios.get('/').then(res => {
-      apiVersion = res.data;
-    }).catch(() => {
-      apiVersion = 'Could not resolve API version';
-    })
     return {
       apiVersion
     }
   },
-};
+  mounted() {
+    getApiVersion();
+  }
+});
 </script>
 
 <style scoped>
