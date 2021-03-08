@@ -9,13 +9,13 @@
 </template>
 
 <script lang="ts">
-import axios from 'axios'
 import { ref, defineComponent } from 'vue';
+const axios = require('axios').default;
 
 const apiVersion = ref<string>('');
 
 const getApiVersion = () => {
-  axios.get('/').then(res => {
+  axios.get('/').then((res: any) => {
     apiVersion.value = res.data;
   }).catch(() => {
     apiVersion.value = 'Could not resolve API version';
