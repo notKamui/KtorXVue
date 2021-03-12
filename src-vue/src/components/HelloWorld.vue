@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue';
+import { ref } from 'vue';
 const axios = require('axios').default;
 
 const apiVersion = ref<string>('');
@@ -25,7 +25,7 @@ const getApiVersion = () => {
   })
 };
 
-export default defineComponent({
+export default {
   setup() {
     return {
       apiVersion
@@ -34,7 +34,7 @@ export default defineComponent({
   mounted() {
     getApiVersion();
   }
-});
+};
 </script>
 
 <style scoped>
