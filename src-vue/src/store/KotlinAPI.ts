@@ -21,7 +21,7 @@ export const KotlinAPIModule = {
   },
 
   actions: {
-    fetchApiVersion({ commit }: any) {
+    fetchApiVersion({commit}: any) {
       commit('SET_API_VERSION')
     }
   },

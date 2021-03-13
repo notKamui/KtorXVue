@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img alt="Vue logo" src="../assets/logo.png"/>
     <div>
       <h1>This is a Ktor x Vue template</h1>
       <h2>{{ apiVersion }}</h2>
@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts">
-import { computed } from 'vue'
-import { useStore } from 'vuex'
+import {computed} from 'vue'
+import {useStore} from 'vuex'
 
 export default {
   setup() {
