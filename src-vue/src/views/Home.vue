@@ -1,9 +1,6 @@
 <template>
   <div id="home">
-    <img 
-      alt="Vue logo"
-      src="../assets/logo.png"
-    >
+    <img alt="Vue logo" src="../assets/logo.png" />
     <div>
       <h1>This is a Ktor x Vue template</h1>
       <h2>{{ state.apiVersion }}</h2>
@@ -12,30 +9,33 @@
 </template>
 
 <script lang="ts">
-import { reactive } from 'vue'
+import { reactive } from "vue";
 
 export default {
   setup() {
     const state = reactive({
-      apiVersion: ''
-    })
-    const axios = require('axios').default
+      apiVersion: "",
+    });
+    const axios = require("axios").default;
 
     function getApiVersion() {
-      axios.get('/').then((res: any) => {
-        state.apiVersion = res.data;
-      }).catch(() => {
-        state.apiVersion = 'Could not resolve API version';
-      })
+      axios
+        .get("/")
+        .then((res: any) => {
+          state.apiVersion = res.data;
+        })
+        .catch(() => {
+          state.apiVersion = "Could not resolve API version";
+        });
     }
 
-    getApiVersion()
+    getApiVersion();
 
     return {
-      state
-    }
-  }
-}
+      state,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
