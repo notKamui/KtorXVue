@@ -6,35 +6,36 @@
     >
     <div>
       <h1>This is a Ktor x Vue template</h1>
-      <h2>{{ apiVersion }}</h2>
+      <h2>{{ state.apiVersion }}</h2>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
-const axios = require('axios').default;
-
-const apiVersion = ref<string>('');
-
-const getApiVersion = () => {
-  axios.get('/').then((res: any) => {
-    apiVersion.value = res.data;
-  }).catch(() => {
-    apiVersion.value = 'Could not resolve API version';
-  })
-};
+import { reactive } from 'vue'
 
 export default {
   setup() {
-    return {
-      apiVersion
+    const state = reactive({
+      apiVersion: ''
+    })
+    const axios = require('axios').default
+
+    function getApiVersion() {
+      axios.get('/').then((res: any) => {
+        state.apiVersion = res.data;
+      }).catch(() => {
+        state.apiVersion = 'Could not resolve API version';
+      })
     }
-  },
-  mounted() {
-    getApiVersion();
+
+    getApiVersion()
+
+    return {
+      state
+    }
   }
-};
+}
 </script>
 
 <style scoped>
