@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <div>
       <h1>This is a Ktor x Vue template</h1>
@@ -13,10 +13,10 @@ import { reactive } from "vue";
 
 export default {
   setup() {
+    const axios = require("axios").default;
     const state = reactive({
       apiVersion: "",
     });
-    const axios = require("axios").default;
 
     function getApiVersion() {
       axios
@@ -37,14 +37,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-#home {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
