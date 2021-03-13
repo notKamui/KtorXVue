@@ -3,37 +3,25 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <div>
       <h1>This is a Ktor x Vue template</h1>
-      <h2>{{ state.apiVersion }}</h2>
+      <h2>{{ apiVersion }}</h2>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { reactive } from "vue";
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   setup() {
-    const axios = require("axios").default;
-    const state = reactive({
-      apiVersion: "",
-    });
+    const store = useStore()
+    store.dispatch('KotlinAPI/fetchApiVersion')
 
-    function getApiVersion() {
-      axios
-        .get("/")
-        .then((res: any) => {
-          state.apiVersion = res.data;
-        })
-        .catch(() => {
-          state.apiVersion = "Could not resolve API version";
-        });
-    }
-
-    getApiVersion();
+    const apiVersion = computed(() => store.state.KotlinAPI.apiVersion)
 
     return {
-      state,
-    };
+      apiVersion
+    }
   },
-};
+}
 </script>
