@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="hello">
     <img 
       alt="Vue logo"
       src="../assets/logo.png"
@@ -38,8 +38,8 @@ export default {
 }
 </script>
 
-<style scoped>
-#app {
+<style lang="scss" scoped>
+#hello {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
