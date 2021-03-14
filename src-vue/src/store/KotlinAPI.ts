@@ -4,7 +4,7 @@ export const KotlinAPIModule = {
   namespaced: true,
 
   state: {
-    apiVersion: ''
+    apiVersion: '',
   },
 
   mutations: {
@@ -17,12 +17,12 @@ export const KotlinAPIModule = {
         .catch(() => {
           state.apiVersion = 'Could not resolve API version'
         })
-    }
+    },
   },
 
   actions: {
-    fetchApiVersion({commit}: any) {
+    fetchApiVersion({ commit }: any) {
       commit('SET_API_VERSION')
-    }
+    },
   },
 }

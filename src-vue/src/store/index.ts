@@ -9,7 +9,6 @@ export default createStore({
   actions: {},
 
   modules: {
-    KotlinAPI: KotlinAPIModule
-  }
-});
-
+    KotlinAPI: KotlinAPIModule,
+  },
+})
