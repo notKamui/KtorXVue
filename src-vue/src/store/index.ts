@@ -1,5 +1,5 @@
-import { createStore } from 'vuex'
-import { KotlinAPIModule } from './KotlinAPI'
+import { createStore } from "vuex";
+import { KotlinAPIModule } from "./KotlinAPI";
 
 export default createStore({
   state: {},
@@ -11,4 +11,4 @@ export default createStore({
   modules: {
     KotlinAPI: KotlinAPIModule,
   },
-})
+});

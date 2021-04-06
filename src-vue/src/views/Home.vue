@@ -1,27 +1,18 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <div>
-      <h1>This is a Ktor x Vue template</h1>
-      <h2>{{ apiVersion }}</h2>
-    </div>
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
 
 <script lang="ts">
-import { computed } from 'vue'
-import { useStore } from 'vuex'
+import { defineComponent } from "vue";
+import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 
-export default {
-  setup() {
-    const store = useStore()
-    store.dispatch('KotlinAPI/fetchApiVersion')
-
-    const apiVersion = computed(() => store.state.KotlinAPI.apiVersion)
-
-    return {
-      apiVersion,
-    }
+export default defineComponent({
+  name: "Home",
+  components: {
+    HelloWorld,
   },
-}
+});
 </script>

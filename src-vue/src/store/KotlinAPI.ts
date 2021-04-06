@@ -1,28 +1,28 @@
-const axios = require('axios').default
+const axios = require("axios").default;
 
 export const KotlinAPIModule = {
   namespaced: true,
 
   state: {
-    apiVersion: '',
+    apiVersion: "",
   },
 
   mutations: {
-    SET_API_VERSION(state: any) {
+    SET_API_VERSION(state: any): void {
       axios
-        .get('/')
+        .get("/")
         .then((res: any) => {
-          state.apiVersion = res.data
+          state.apiVersion = res.data;
         })
         .catch(() => {
-          state.apiVersion = 'Could not resolve API version'
-        })
+          state.apiVersion = "Could not resolve API version";
+        });
     },
   },
 
   actions: {
-    fetchApiVersion({ commit }: any) {
-      commit('SET_API_VERSION')
+    fetchApiVersion({ commit }: any): void {
+      commit("SET_API_VERSION");
     },
   },
-}
+};
