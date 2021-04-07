@@ -9,11 +9,15 @@
 </template>
 
 <script lang="ts">
-import { computed } from "vue";
+import { computed, ComputedRef } from "vue";
 import { useStore } from "vuex";
 
+interface State {
+  apiVersion: ComputedRef<string>;
+}
+
 export default {
-  setup(): any {
+  setup(): State {
     const store = useStore();
     store.dispatch("KotlinAPI/fetchApiVersion");
 

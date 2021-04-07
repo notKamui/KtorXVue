@@ -8,10 +8,10 @@ export const KotlinAPIModule = {
   },
 
   mutations: {
-    SET_API_VERSION(state: any): void {
+    SET_API_VERSION(state: { apiVersion: string }): void {
       axios
         .get("/")
-        .then((res: any) => {
+        .then((res: { data: string }) => {
           state.apiVersion = res.data;
         })
         .catch(() => {
@@ -21,7 +21,7 @@ export const KotlinAPIModule = {
   },
 
   actions: {
-    fetchApiVersion({ commit }: any): void {
+    fetchApiVersion({ commit }: { commit: (mut: string) => void }): void {
       commit("SET_API_VERSION");
     },
   },
